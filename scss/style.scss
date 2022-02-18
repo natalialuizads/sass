@@ -1,0 +1,74 @@
+$cor-primaria: #84e;
+$font-primaria: monospace;
+$gutter: 20px;
+
+// A ordem importa sempre será colocado último estilo.
+$cor-primaria: pink;
+
+section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/** 
+    Nesting - ou Alinhamento
+    Ao escrever HTML, você provavelmente notou que ele tem uma hierarquia clara aninhada e visual. 
+    CSS, por outro lado, não.
+    O Sass permitirá que você aninhará seus seletores CSS de uma maneira que segue a mesma hierarquia
+    visual do seu HTML.Esteja ciente de que regras excessivamente aninhadas resultarão em CSS 
+    superqualificados que podem ser difíceis de manter e geralmente é considerado má prática.
+
+    Boa prática utilizar no máximo 3 seletores alinhados
+
+   Parent - O seletor pai, &, é um seletor especial inventado por Sass que é usado em seletores 
+   aninhados para se referir ao seletor externo. Torna possível reutilizar o seletor externo 
+   de maneiras mais complexas, como adicionar uma pseudoclasse ou adicionar um seletor 
+   antes do pai.
+**/
+.modal {
+  h1 {
+    color: $cor-primaria;
+    font-family: $font-primaria;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.4;
+    max-width: 400px;
+    font-family: $font-primaria;
+  }
+
+  a {
+    display: block;
+    max-width: 120px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    background: $cor-primaria;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: monospace;
+  }
+}
+
+ul {
+  text-align: center;
+
+  li {
+    display: inline-block;
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      display: block;
+      padding: 20px;
+      color: red;
+
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+}
