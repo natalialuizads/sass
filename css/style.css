@@ -1,20 +1,26 @@
 @charset "UTF-8";
+/**
+ Variáveis
+ Pense em variáveis como uma maneira de armazenar informações que você deseja 
+ reutilizar ao longo de sua folha de estilo.
+ Você pode armazenar coisas como cores, pilhas de fontes ou qualquer valor 
+ CSS que você acha que vai querer reutilizar.
+ Sass usa o símbolo $ para fazer algo uma variável.
+*/
 section {
   max-width: 600px;
   margin: 0 auto;
 }
 
 /** 
-    Nesting - ou Alinhamento, ter capacidade um seletor dentro do outro, efeito cascata. 
-    Recomendado colocar somente 3 dentro do outro, organização manter máximo três 
-		Desse jeito, fica fácil determinar as relações entre os elementos da página e, 
-    consequentemente, aplicar regras com simplicidade e clareza.
-		Além disso, o código escrito reduz bastante em tamanho, o que ajuda a agilizar 
-    a execução do projeto.
-		A vantagem de você usar isso é que se você usar o .header__logo em outro lugar ele não
-    tem interferência do .header Mas faz você digitar mais gera uma repetição desnecessário, 
-    pois usando o Sass, ele vai entender que tudo dentro do .header vai ser filho e herdar 
-    as configurações inclusive o nome inicial bastando usar o &
+    Nesting - ou Alinhamento
+    Ao escrever HTML, você provavelmente notou que ele tem uma hierarquia clara aninhada e visual. 
+    CSS, por outro lado, não.
+    O Sass permitirá que você aninhará seus seletores CSS de uma maneira que segue a mesma hierarquia
+    visual do seu HTML.Esteja ciente de que regras excessivamente aninhadas resultarão em CSS 
+    superqualificados que podem ser difíceis de manter e geralmente é considerado má prática.
+
+    Boa prática utilizar no máximo 3 seletores alinhados
 
    Parent - O seletor pai, &, é um seletor especial inventado por Sass que é usado em seletores 
    aninhados para se referir ao seletor externo. Torna possível reutilizar o seletor externo 
@@ -60,6 +66,42 @@ ul li a {
 }
 ul li a:hover {
   color: blue;
+}
+
+/**
+  Mixins
+  Algumas coisas no CSS são um pouco tediosas de escrever, 
+  especialmente com CSS3 e os muitos prefixos de fornecedores que existem.
+  Uma Mixins permite que você faça grupos de declarações de CSS que você 
+  deseja reutilizar em todo o seu site.Ajuda a manter seu Sass muito DRY. 
+  Você pode até mesmo passar em valores para tornar sua mistura mais flexível. 
+
+  Ajuda com prefixos
+  Podemos utilizar Mixin dentro de Mixin
+  Usamos o include para adicionar 
+  Podemos passar argumentos dentro, também colocar valores padrões
+
+  @Content
+  Além de receber argumentos, um mixin pode receber um bloco inteiro de estilos, conhecido como bloco de conteúdo. Um mixin pode declarar que recebe um bloco de conteúdo incluindo o @content at-rule em seu corpo. O bloco de conteúdo é passado usando chaves como qualquer outro bloco em Sass, e é injetado no lugar da regra @content.
+**/
+.modal h1 {
+  font-size: 4em;
+  font-weight: bold;
+  font-family: monospace;
+  line-height: 1;
+}
+.modal h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background-color: pink;
+  width: 200px;
+}
+@media (max-width: 600px) {
+  .modal h1 {
+    color: red;
+    font-size: 2em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

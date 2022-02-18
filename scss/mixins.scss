@@ -1,0 +1,56 @@
+/**
+  Mixins
+  Algumas coisas no CSS são um pouco tediosas de escrever, 
+  especialmente com CSS3 e os muitos prefixos de fornecedores que existem.
+  Uma Mixins permite que você faça grupos de declarações de CSS que você 
+  deseja reutilizar em todo o seu site.Ajuda a manter seu Sass muito DRY. 
+  Você pode até mesmo passar em valores para tornar sua mistura mais flexível. 
+
+  Ajuda com prefixos
+  Podemos utilizar Mixin dentro de Mixin
+  Usamos o include para adicionar 
+  Podemos passar argumentos dentro, também colocar valores padrões
+
+  @Content
+  Além de receber argumentos, um mixin pode receber um bloco inteiro de estilos, conhecido como bloco de conteúdo. Um mixin pode declarar que recebe um bloco de conteúdo incluindo o @content at-rule em seu corpo. O bloco de conteúdo é passado usando chaves como qualquer outro bloco em Sass, e é injetado no lugar da regra @content.
+**/
+
+// Exemplo da sintaxe básica
+@mixin title {
+  font-weight: bold;
+  font-family: monospace;
+}
+
+// Exemplo de um mixin dentro de outro
+@mixin title-large {
+  font-size: 4em;
+  @include title;
+  line-height: 1;
+}
+
+//  Exemplo utilizando argumentos
+@mixin separador($color: blue, $largura: 100px) {
+  &::after {
+    content: "";
+    display: block;
+    height: 4px;
+    background-color: $color;
+    width: $largura;
+  }
+}
+
+// Exemplo do content
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+.modal h1 {
+  @include title-large;
+  @include separador(pink, 200px);
+  @include mobile {
+    color: red;
+    font-size: 2em;
+  }
+}
