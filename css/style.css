@@ -104,4 +104,45 @@ ul li a:hover {
   }
 }
 
+/**
+  Usar o @extend permite compartilhar um conjunto de propriedades CSS de um seletor para outro.
+  Boa prática sempre utilizar o extend quando tiver somente um seletor no projeto
+**/
+.btn, .btn-sucesso, .btn-erro {
+  padding: 20px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn-erro {
+  color: red;
+  border: 1px solid red;
+}
+
+.btn-sucesso {
+  color: green;
+  border: 1px solid green;
+}
+
+/**
+  Placeholder - Uma classe placeholder é um tipo especial de classe que só imprime quando é estendida e pode ajudar a manter seu CSS compilado limpo e completo.
+**/
+.warning, .error, .success, .message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
 /*# sourceMappingURL=style.css.map */
