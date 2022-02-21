@@ -1,0 +1,20 @@
+/**
+
+O Sass suporta vários operadores úteis para trabalhar com valores diferentes. 
+Estes incluem os operadores matemáticos padrão como + e *, bem como operadores para vários outros tipos:
+
+== e != são usados ​​para verificar se dois valores são iguais.
++, -, *, / e % têm seu significado matemático usual para números, com comportamentos especiais para unidades que correspondem ao uso de unidades em matemática científica.
+<, <=, > e >= verificam se dois números são maiores ou menores que o outro.
+e, ou, e não têm o comportamento booleano usual. Sass considera todos os valores “true” exceto false e null.
++, - e / podem ser usados ​​para concatenar strings.
+**/
+
+$gutter: 20px;
+
+div {
+  $width: 400px;
+  width: $width - 2 * $gutter;
+  padding: $gutter;
+  height: $width / 2;
+}

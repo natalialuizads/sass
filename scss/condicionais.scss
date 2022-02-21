@@ -1,0 +1,65 @@
+/**
+No Sass condicionais são chamadas de **Diretivas de controle**, ou em inglês, que é mais chique, “Control Directives. As funções são @if, @for, @each e @while. São as condicionais tradicionais que estamos acostumados a usar nas outras linguagens
+
+**/
+
+$tema: oceano;
+$primary-color: black;
+$secondary-color: gray;
+
+@if $tema == oceano {
+  $primary-color: blue;
+  $secondary-color: orange;
+} @else if $tema == deserto {
+  $primary-color: yellow;
+  $secondary-color: purple;
+}
+
+@mixin type-1($size) {
+  font-family: monospace;
+
+  @if $size == normal {
+    font-size: 1em;
+    font-weight: normal;
+  } @else if $size == large {
+    font-size: 1.25em;
+    font-weight: normal;
+  } @else if $size == x-large {
+    font-size: 1.65em;
+    font-weight: bold;
+  }
+}
+
+@mixin device($device) {
+  @if $device == m {
+    @media (max-width: 300px) {
+      @content;
+    }
+  } @else if $device == t {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $device == s {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+}
+
+p {
+  @include type-1(normal);
+  color: $primary-color;
+  background-color: $secondary-color;
+}
+
+div {
+  width: 100%;
+
+  @include device(t) {
+    width: 80%;
+  }
+
+  @include device(m) {
+    width: 60%;
+  }
+}
