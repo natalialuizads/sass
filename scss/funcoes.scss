@@ -1,0 +1,49 @@
+/**
+    Sass tem algumas funções padrões
+**/
+
+$roxo: #84e;
+
+// LigthTen
+a {
+  color: white;
+  background-color: $roxo;
+  &:hover {
+    background-color: lighten($roxo, 20%);
+  }
+}
+
+// Transparentize
+a {
+  color: white;
+  background-color: $roxo;
+  &:hover {
+    background-color: transparentize($roxo, 0.5);
+  }
+}
+
+// Round
+
+$width: 400px;
+
+p {
+  width: round(calc($width / 3)); // 133px
+  height: calc($width / 3); // 133.33333px
+}
+
+// Podemos criar nossas próprias funções
+@function rem($pixels, $contexto: 16) {
+  @return calc(($pixels / $contexto) * 1rem);
+}
+
+p {
+  font-size: rem(16);
+}
+
+@function grid($colunas, $total: 12) {
+  @return round(calc($colunas / $total) * 100%);
+}
+
+div {
+  width: grid(2);
+}

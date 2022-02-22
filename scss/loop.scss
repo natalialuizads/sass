@@ -1,0 +1,39 @@
+//  FOR
+@for $i from 1 through 6 {
+  .item-#{$i} {
+    width: 100px * $i;
+  }
+}
+
+$container: 960;
+$colunas: 12;
+$gutter: 20;
+
+// GRID
+@for $i from 1 through 12 {
+  $width: calc($container / $colunas * $i - $gutter);
+  .grid-#{$i} {
+    width: #{$width}px;
+  }
+}
+
+// WHILE
+$i: 1;
+
+@while $i <=6 {
+  .type-#{$i} {
+    font-size: #{16 * $i}px;
+  }
+
+  $i: $i + 1;
+}
+
+// @each 
+
+$redes: facebook twitter pinterest instagram;
+
+@each $rede in $redes {
+  .#{$rede}-icon {
+   background-image: url('../img/#{$rede}.png');
+  }
+}

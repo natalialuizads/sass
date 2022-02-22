@@ -162,4 +162,148 @@ div {
   height: 200px;
 }
 
+/**
+    Sass tem algumas funções padrões
+**/
+a {
+  color: white;
+  background-color: #84e;
+}
+a:hover {
+  background-color: #c4a2f7;
+}
+
+a {
+  color: white;
+  background-color: #84e;
+}
+a:hover {
+  background-color: rgba(136, 68, 238, 0.5);
+}
+
+p {
+  width: 133px;
+  height: 133.3333333333px;
+}
+
+p {
+  font-size: 1rem;
+}
+
+div {
+  width: 17%;
+}
+
+.item-1 {
+  width: 100px;
+}
+
+.item-2 {
+  width: 200px;
+}
+
+.item-3 {
+  width: 300px;
+}
+
+.item-4 {
+  width: 400px;
+}
+
+.item-5 {
+  width: 500px;
+}
+
+.item-6 {
+  width: 600px;
+}
+
+.grid-1 {
+  width: 60px;
+}
+
+.grid-2 {
+  width: 140px;
+}
+
+.grid-3 {
+  width: 220px;
+}
+
+.grid-4 {
+  width: 300px;
+}
+
+.grid-5 {
+  width: 380px;
+}
+
+.grid-6 {
+  width: 460px;
+}
+
+.grid-7 {
+  width: 540px;
+}
+
+.grid-8 {
+  width: 620px;
+}
+
+.grid-9 {
+  width: 700px;
+}
+
+.grid-10 {
+  width: 780px;
+}
+
+.grid-11 {
+  width: 860px;
+}
+
+.grid-12 {
+  width: 940px;
+}
+
+.type-1 {
+  font-size: 16px;
+}
+
+.type-2 {
+  font-size: 32px;
+}
+
+.type-3 {
+  font-size: 48px;
+}
+
+.type-4 {
+  font-size: 64px;
+}
+
+.type-5 {
+  font-size: 80px;
+}
+
+.type-6 {
+  font-size: 96px;
+}
+
+.facebook-icon {
+  background-image: url("../img/facebook.png");
+}
+
+.twitter-icon {
+  background-image: url("../img/twitter.png");
+}
+
+.pinterest-icon {
+  background-image: url("../img/pinterest.png");
+}
+
+.instagram-icon {
+  background-image: url("../img/instagram.png");
+}
+
 /*# sourceMappingURL=style.css.map */
